@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+	  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+	  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry location="E:\mvn_repo\repository\com\oracle\ojdbc14\10.2.0.4.0\ojdbc14-10.2.0.4.0.jar" />
+
+	<context id="OracleTables" defaultModelType="flat" targetRuntime="MyBatis3">
+		
+		<commentGenerator>
+			<property name="suppressDate" value="false"/>
+			<property name="suppressAllComments" value="false"/>
+		</commentGenerator>
+	
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@192.168.0.22:1521:wallet
+			userId="dwallet"
+			password="dwallet2015">
+		</jdbcConnection>
+
+		<javaTypeResolver >
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- generate Model -->
+		<javaModelGenerator targetPackage="com.bid.entity" targetProject="src">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		
+		<!-- generate xml -->
+		<sqlMapGenerator targetPackage="com.bid.mapper"  targetProject="src">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		
+		<!-- generate Mapper -->
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.bid.mapper"  targetProject="src">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<table tableName="SYSTEM_PROPERTIES" domainObjectName="SystemProperty" 
+			enableCountByExample="false" 
+			enableUpdateByExample="false" 
+			enableDeleteByExample="false" 
+			enableSelectByExample="false" 
+			selectByExampleQueryId="false">
+		</table>
+	</context>
+</generatorConfiguration>

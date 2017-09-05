@@ -1,0 +1,23 @@
+# svn
+.svn/
+
+.DS_Store
+*.log
+*.class
+/classes
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+
+out/
+target/
+.idea/
+*.iml
+
+.classpath
+.project
+.settings
+.settings/
