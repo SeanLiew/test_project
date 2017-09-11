@@ -99,7 +99,6 @@ p span, h3 span, div.underline {
 </style>
 </head>
 <body>
-	<%@include file="../common/include.jsp"%>
 	<div class="cont">
 		<div class="txt">
 			<h1>《居间服务合同》</h1>

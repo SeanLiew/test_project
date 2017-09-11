@@ -14,9 +14,8 @@
 		</commentGenerator>
 	
 		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
-			connectionURL="jdbc:oracle:thin:@192.168.0.22:1521:wallet
-			userId="dwallet"
-			password="dwallet2015">
+			connectionURL="jdbc:oracle:thin:@192.168.0.22:1521:wallet"
+			userId="dwallet" password="dwallet2015">
 		</jdbcConnection>
 
 		<javaTypeResolver >
