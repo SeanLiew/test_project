@@ -25,4 +25,6 @@ public class TestLong {
 		Long real = num.longValue();
 		System.out.println(real);
 	}
+	
+	
 }

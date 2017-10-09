@@ -8,11 +8,11 @@ public class ExceptionTest {
 		try {
 			thorwEx();
 		} catch (Exception e) {
-			return "456";
-//			throw e;
+//			return "456";
+			throw e;
 		}finally {
-			throw new Exception("exIn");
-//			return "123";
+//			throw new Exception("exIn");
+			return "123";
 		}
 	}
 	
@@ -30,4 +30,24 @@ public class ExceptionTest {
 		}
 		System.out.println(res);
 	}
+	
+	public int testOut() {
+		int x;
+		try {
+			x=1;
+			throw new Exception("error");
+		} catch (Exception e) {
+			x=2;
+			return x;
+		}finally {
+			x=3;
+		}
+	}
+	
+	@Test
+	public void testIntVoid() {
+		int result = testOut();
+		System.out.println(result);
+	}
+	
 }
