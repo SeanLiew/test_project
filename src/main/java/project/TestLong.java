@@ -1,6 +1,7 @@
 package project;
 
 import java.math.BigDecimal;
+import java.util.concurrent.atomic.AtomicLong;
 
 import org.junit.Test;
 
@@ -26,5 +27,17 @@ public class TestLong {
 		System.out.println(real);
 	}
 	
+	@Test
+	public void testInteger(){
+		Integer num = new Integer("10");
+		Long real = new Long("9");
+		System.out.println(real * num);
+		System.out.println(real < num);
+	}
+	@Test
+	public void testAtomic(){
+		AtomicLong al = new AtomicLong(0);
+		System.out.println(al.incrementAndGet());
+	}
 	
 }

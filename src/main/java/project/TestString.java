@@ -1,7 +1,9 @@
 package project;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Test;
 
@@ -24,9 +26,10 @@ public class TestString {
 	}
 	@Test
 	public void testEquals(){
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("num2", 1);
 		String num1 = "1";
-		long num2 = 1L;
-		System.out.println(num1.equals(String.valueOf(num2)));
+		System.out.println(num1.equals(params.get("num2").toString()));
 	}
 	@Test
 	public void testGeneSql(){
@@ -39,8 +42,7 @@ public class TestString {
 	}
 	@Test
 	public void testInt(){
-		int num = 100;
-		System.out.println((String.valueOf(num)));
+		System.out.println((String.valueOf(null)));
 	}
 	
 	@Test
@@ -82,5 +84,16 @@ public class TestString {
 		System.out.println(s0==s1);
 		System.out.println(s0==s1.intern());
 		System.out.println(s0==s2);
+	}
+	@Test
+	public void testArray(){
+		String[] str1= {"java", "oracle"};
+		System.out.println(str1.toString());
+	}
+	@Test
+	public void testSplit(){
+		String str = "130896233250148109-11.23|12";
+		String[] split = str.split("\\|");
+		System.out.println(split.toString());
 	}
 }

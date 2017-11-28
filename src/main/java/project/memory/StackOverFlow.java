@@ -1,9 +1,10 @@
 package project.memory;
 
 public class StackOverFlow {
-	private int i ;
+	private int i;
     public void plus() {
-       i++;
+       i++;;
+       System.out.println("current i = :"+i);
        plus();
     }
     /**
@@ -17,7 +18,9 @@ public class StackOverFlow {
     public static void main(String[] args) {
        StackOverFlow stackOverFlow = new StackOverFlow();
        try {
-           stackOverFlow.plus();
+    	   while(true) {
+    		   stackOverFlow.plus();
+    	   }
        } catch (Exception e) {
            System.out.println("Exception:stack length:"+stackOverFlow.i);
            e.printStackTrace();
