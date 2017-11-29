@@ -17,8 +17,9 @@ public class Table {
 	public synchronized void put(String cake) throws InterruptedException {
 		System.out.println(Thread.currentThread().getName() + " puts" + cake);
 		while(count >= buffer.length) {
-			System.out.println(Thread.currentThread().getName() + " waits");
+			System.out.println(Thread.currentThread().getName() + " wait begin");
 			wait();
+			System.out.println(Thread.currentThread().getName() + " wait end");
 		}
 		buffer[tail] = cake;
 		tail = (tail + 1) % buffer.length;
@@ -29,8 +30,9 @@ public class Table {
 	public synchronized String take() throws InterruptedException {
 		System.out.println(Thread.currentThread().getName() + " wants to take cake");
 		while(count <= 0) {
-			System.out.println(Thread.currentThread().getName() + " waits");
+			System.out.println(Thread.currentThread().getName() + " wait begin");
 			wait();
+			System.out.println(Thread.currentThread().getName() + " wait end");
 		}
 		String cake = buffer[head];
 		head = (head + 1) %  buffer.length;
@@ -39,5 +41,23 @@ public class Table {
 		System.out.println(Thread.currentThread().getName() + " takes " + cake);
 		return cake;
 		
+	}
+	//清理桌子
+	public synchronized void clear() {
+		while(count > 0) {
+			try {
+				Thread.currentThread().sleep(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			String cake = buffer[head];
+			System.out.println(Thread.currentThread().getName() + " clears " + cake);
+			head = (head + 1) %  buffer.length;
+			count--;
+		}
+		head = 0;
+		tail = 0;
+		count = 0;
+		notifyAll();
 	}
 }
