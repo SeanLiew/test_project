@@ -19,12 +19,25 @@ public class TestGeneric {
 	static List<Fruit> fruit = new ArrayList<Fruit>();
 	
 	private void main() {
-		List<? extends Fruit> flist = new ArrayList<Apple>();
-//		flist.add(new Fruit());
-//		flist.add(new Apple());
+		List<? super Fruit> flist = new ArrayList<Food>();
+		flist.add(new Fruit());
+		flist.add(new Apple());
+		flist.add(new Jonathan());
+		
 //		flist.add(new Jonathan());
 //		flist.add(new Object());
-		Fruit f = flist.get(1);
+		Object f = flist.get(1);
+		
+		
+		writeTo(flist);
+		
+		
+		List<?> list = new ArrayList<Food>();
+		list.add(null);
+//		list.add(new Apple());
+//		list.add(new Jonathan());
+//		list.add(new Food());
+//		list.add(new Object());
 	}
 	static void writeTo(List<? super Apple> list) {
 		list.add(new Apple());
@@ -35,7 +48,10 @@ public class TestGeneric {
 		Plate<? super Fruit> p=new Plate<Fruit>(new Apple());
 		p.set(new Fruit());
 		p.set(new Apple());
-//		Apple newFruit3=p.get(); 
+//		p.set(new Food());
+		p.set(new Jonathan());
+		
+		Object newFruit3=p.get(); 
 		
 	}
 
@@ -80,8 +96,9 @@ class Demo2
     }  
     public static void main(String[] args)  
     {  
-        Point<Apple> p1 = new Point<Apple>();  
+        Point<? extends Fruit> p1 = new Point<Apple>();  
         Point<String> p2 = new Point<String>();  
+        
         show(new Point<Apple>());  
         show(new Point<Jonathan>());  
 //        show(new Point<Fruit>());  

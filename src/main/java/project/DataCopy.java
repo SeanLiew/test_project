@@ -10,11 +10,11 @@ public class DataCopy {
 		Connection conn = null;
 		Class.forName("oracle.jdbc.driver.OracleDriver");// 加入oracle的驱动，“”里面是驱动的路径
 
-		String url = "jdbc:oracle:thin:@192.168.0.22:1521:wagent";// 数据库连接，oracle代表链接的是oracle数据库；thin:@MyDbComputerNameOrIP代表的是数据库所在的IP地址（可以保留thin:）；1521代表链接数据库的端口号；ORCL代表的是数据库名称
+		String url = "";// 数据库连接，oracle代表链接的是oracle数据库；thin:@MyDbComputerNameOrIP代表的是数据库所在的IP地址（可以保留thin:）；1521代表链接数据库的端口号；ORCL代表的是数据库名称
 
-		String UserName = "wagent";// 数据库用户登陆名 ( 也有说是 schema 名字的 )
+		String UserName = "";// 数据库用户登陆名 ( 也有说是 schema 名字的 )
 
-		String Password = "wagent2016";// 密码
+		String Password = "";// 密码
 
 		conn = DriverManager.getConnection(url, UserName, Password);
 		Statement statement = conn.createStatement();

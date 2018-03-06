@@ -15,8 +15,12 @@ public class TestLong {
 	
 	@Test
 	public void testCompare(){
-		Long total = new Long("10");
-		Long real = new Long("10");
+		Long total = new Long("111199928");
+		Long real = new Long("111199929");
+		System.out.println(total < real);
+		System.out.println(total <= real);
+		System.out.println(total == real);
+		System.out.println(real.longValue() == 111199929L);
 		System.out.println(total.equals(real));
 	}
 	
@@ -29,10 +33,10 @@ public class TestLong {
 	
 	@Test
 	public void testInteger(){
+		Long real = new Long("10");
 		Integer num = new Integer("10");
-		Long real = new Long("9");
 		System.out.println(real * num);
-		System.out.println(real < num);
+		System.out.println(real <= num);
 	}
 	@Test
 	public void testAtomic(){

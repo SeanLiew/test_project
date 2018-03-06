@@ -14,8 +14,8 @@
 		</commentGenerator>
 	
 		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
-			connectionURL="jdbc:oracle:thin:@192.168.0.22:1521:wallet"
-			userId="dwallet" password="dwallet2015">
+			connectionURL="jdbc:oracle:thin:@192.168.0.22:1521:walle"
+			userId="d" password="d2015">
 		</jdbcConnection>
 
 		<javaTypeResolver >
@@ -23,21 +23,21 @@
 		</javaTypeResolver>
 
 		<!-- generate Model -->
-		<javaModelGenerator targetPackage="com.bid.entity" targetProject="src">
+		<javaModelGenerator targetPackage="com.api.entity" targetProject="src">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 		
 		<!-- generate xml -->
-		<sqlMapGenerator targetPackage="com.bid.mapper"  targetProject="src">
+		<sqlMapGenerator targetPackage="com.api.mapper"  targetProject="src">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 		
 		<!-- generate Mapper -->
-		<javaClientGenerator type="XMLMAPPER" targetPackage="com.bid.mapper"  targetProject="src">
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.api.mapper"  targetProject="src">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
-		<table tableName="CALCULATE_STANDARDS" domainObjectName="CalculateStandard" 
+		<table tableName="IMPORT_PROCESS" domainObjectName="ImportProcess" 
 			enableCountByExample="false" 
 			enableUpdateByExample="false" 
 			enableDeleteByExample="false" 

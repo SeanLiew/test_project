@@ -7,8 +7,8 @@ import org.apache.commons.io.FileUtils;
 
 public class DeleteFile {
 	public static void main(String[] args) throws IOException {
-		File xmlDir = new File("D:\\gitSpace\\ielpm_task\\src\\main\\resources\\mapper");
-		File javaDir = new File("D:\\gitSpace\\ielpm_task\\src\\main\\java\\com\\api\\mapper");
+		File xmlDir = new File("D:\\gitSpace\\_task\\src\\main\\resources\\mapper");
+		File javaDir = new File("D:\\gitSpace\\_task\\src\\main\\java\\com\\api\\mapper");
 		File destDir = new File("D:\\temp");
 		
 		File[] xmlFiles = xmlDir.listFiles();

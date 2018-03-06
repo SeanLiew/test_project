@@ -8,6 +8,8 @@ public class TestInt {
 		String num = "1.0";
 		int result = Integer.parseInt(String.valueOf(num));
 		System.out.println(result);
+		
+		
 	}
 	
 }

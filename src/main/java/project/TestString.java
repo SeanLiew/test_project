@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.junit.Test;
 
@@ -71,19 +73,30 @@ public class TestString {
 	public void testStr(){
 		String str1="java";
 		String str2="blog";
-		String s=str1+str2;
-		System.out.println(s=="javablog");
-		System.out.println(s.intern()=="javablog");
+		String s= "javablog";
+		System.out.println(str1 + str2 == "javablog");
+		System.out.println(s == "javablog");
+		System.out.println(s.intern() == "javablog");
 		
 		String s0="kvill";
 		String s1=new String("kvill");
 		String s2=new String("kvill");
 		System.out.println(s0==s1);
-		s1.intern();
-		s2=s2.intern();
+		s1 = s1.intern();
 		System.out.println(s0==s1);
-		System.out.println(s0==s1.intern());
+		s2=s2.intern();
 		System.out.println(s0==s2);
+	}
+	@Test
+	public void testStr2(){
+		String str1="blog";
+		String str2="blog";
+		System.out.println(str1 == str2);
+		String s1=new String("kvill");
+		String s2=new String("kvill");
+		s1 = s1.intern();
+		s2 = s2.intern();
+		System.out.println(s1 == s2);
 	}
 	@Test
 	public void testArray(){
@@ -95,5 +108,17 @@ public class TestString {
 		String str = "130896233250148109-11.23|12";
 		String[] split = str.split("\\|");
 		System.out.println(split.toString());
+	}
+	@Test
+	public void testRegLogin(){
+		String letterReg = "^[a-zA-Z].*";
+		String numReg = "^\\d.*";
+		System.out.println("letter begin : " + "saaa333".matches(letterReg));
+		System.out.println("num begin : " + "93e3".matches(numReg));
+	}
+	@Test
+	public void testRegix(){
+		String letterReg = "^.*(?=.{6,30})(?=.*\\d)(?=.*[A-Z])(?=.*[a-z]).*$";
+		System.out.println(Pattern.matches(letterReg, "qW1341"));
 	}
 }
